@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="50.445764">
-<testcase classname="Check Competetia website login functionality for referre" name="Login Test for Referrer User" time="27.278239">
-<system-out><![CDATA[Given User launch Chrome browser............................................passed
-Then User Clicks on Login CTA from homepage.................................passed
-Then User enters Email id as "deulkar.prasad87@gmail.com" and password as "Password!21".passed
-Then User clicks on LoginCTA from pop-up....................................passed
-Then User navigates on Welcome page with page title as "Inner Circle : Dashboard".passed
-Then Referre dashboard should be displayed..................................passed
-Then User close the browser.................................................passed
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="0">
+<testcase classname="Check Competetia website login functionality for referre" name="Login Test for Referrer User" time="0">
+<system-out><![CDATA[Given User launch Chrome browser............................................skipped
+Then User Clicks on Login CTA from homepage.................................skipped
+Then User enters Email id as "deulkar.prasad87@gmail.com" and password as "Password!21".skipped
+Then User clicks on LoginCTA from pop-up....................................skipped
+Then User navigates on Welcome page with page title as "Inner Circle : Dashboard".skipped
+Then Referre dashboard should be displayed..................................skipped
+Then User close the browser.................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Check Competetia website login functionality for referre" name="Login Test for Normal User" time="23.167525">
-<system-out><![CDATA[Given User launch Chrome browser............................................passed
-Then User Clicks on Login CTA from homepage.................................passed
-Then User enters Email id as "test.jan@mailcatch.com" and password as "Password!21".passed
-Then User clicks on LoginCTA from pop-up....................................passed
-Then User navigates on Welcome page with page title as "Inner Circle : Dashboard".passed
-Then Normal dashboard should be displayed...................................passed
-Then User close the browser.................................................passed
+<testcase classname="Check Competetia website login functionality for referre" name="Login Test for Normal User" time="0">
+<system-out><![CDATA[Given User launch Chrome browser............................................skipped
+Then User Clicks on Login CTA from homepage.................................skipped
+Then User enters Email id as "test.jan@mailcatch.com" and password as "Password!21".skipped
+Then User clicks on LoginCTA from pop-up....................................skipped
+Then User navigates on Welcome page with page title as "Inner Circle : Dashboard".skipped
+Then Normal dashboard should be displayed...................................skipped
+Then User close the browser.................................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

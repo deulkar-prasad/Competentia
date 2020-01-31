@@ -44,7 +44,29 @@ public class LoginPage extends TestBase
 	@FindBy(xpath="(//*[contains(text (),'Log in')])[2]")
 	WebElement loginCTA;
 	
+	@FindBy(xpath="//*[contains(text (),'Forgot your password?')]")
+	WebElement ForgotPwd;
 	
+	
+	//--------------- Page factory for forgot password flow ------------------------------------------------
+	@FindBy(xpath="(//*[contains(text (),'Reset password')])[1]")
+	WebElement ResetPwdTitle;
+	
+	@FindBy(xpath="(//input[@name='email'])[2]")
+	WebElement ResetEmail;
+	
+	@FindBy(xpath="(//button[@type='submit'])[2]")
+	WebElement ResetPwdCTA;
+	
+	@FindBy(xpath="(//*[contains(text (),'Cancel')])[1]")
+	WebElement CancelCTA;
+	
+	@FindBy(xpath="(//*[contains(text (),'Check your inbox')])[1]")
+	WebElement CheckYourInbox;
+	
+	
+	@FindBy(xpath="(//*[contains(text (),'Got it')])[1]")
+	WebElement GotItCTA;
 	
 	//----------------------- Actions on the page ---------------------------------------- 
 	
@@ -80,6 +102,10 @@ public class LoginPage extends TestBase
 		
 		loginCTA.click();
 	}
+	
+	
+	
+	
 	
 	
 }

@@ -27,15 +27,13 @@ formatter.match({
   "location": "Login.user_launch_Chrome_browser()"
 });
 formatter.result({
-  "duration": 9285260069,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "Login.user_Clicks_on_Login_CTA_from_homepage()"
 });
 formatter.result({
-  "duration": 3921978878,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.scenario({
   "line": 10,
@@ -90,15 +88,13 @@ formatter.match({
   "location": "Login.user_enters_Email_id_as_and_password_as(String,String)"
 });
 formatter.result({
-  "duration": 1318839790,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "Login.user_clicks_on_LoginCTA_from_pop_up()"
 });
 formatter.result({
-  "duration": 11577314265,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -110,22 +106,19 @@ formatter.match({
   "location": "Login.user_navigates_on_Welcome_page_with_page_title_as(String)"
 });
 formatter.result({
-  "duration": 13959979,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "Login.user_should_view_the_referre_s_dashboard()"
 });
 formatter.result({
-  "duration": 215864477,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "Login.user_close_the_browser()"
 });
 formatter.result({
-  "duration": 945021344,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.background({
   "line": 3,
@@ -148,15 +141,13 @@ formatter.match({
   "location": "Login.user_launch_Chrome_browser()"
 });
 formatter.result({
-  "duration": 6675016712,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "Login.user_Clicks_on_Login_CTA_from_homepage()"
 });
 formatter.result({
-  "duration": 4125450599,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.scenario({
   "line": 18,
@@ -211,15 +202,13 @@ formatter.match({
   "location": "Login.user_enters_Email_id_as_and_password_as(String,String)"
 });
 formatter.result({
-  "duration": 1170845631,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "Login.user_clicks_on_LoginCTA_from_pop_up()"
 });
 formatter.result({
-  "duration": 10243187800,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -231,21 +220,18 @@ formatter.match({
   "location": "Login.user_navigates_on_Welcome_page_with_page_title_as(String)"
 });
 formatter.result({
-  "duration": 9685368,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "Login.normal_dashboard_should_be_displayed()"
 });
 formatter.result({
-  "duration": 125082891,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "Login.user_close_the_browser()"
 });
 formatter.result({
-  "duration": 818255652,
-  "status": "passed"
+  "status": "skipped"
 });
 });
