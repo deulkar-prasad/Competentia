@@ -15,6 +15,8 @@ strict=true, // True: will fail the execution if there are any undefined or pend
 dryRun=true, // if true - checks all the steps have step definition  
 tags= {"@Sanity,@Regression"}
 )
-public class TestRunner {
+public class TestRunner 
+{
 
+	
 }

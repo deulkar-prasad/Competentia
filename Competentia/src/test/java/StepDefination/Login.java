@@ -75,4 +75,78 @@ public class Login extends TestBase
 	    wp.NormalUserView();
 	}
 	
+	//---------------------- Steps Definations for Forgot Password -------------------
+	
+	
+	@Then("^User clicks on forgot password link$")
+	public void user_clicks_on_forgot_password_link() throws Throwable
+	{
+		lp.ClickonForgotpwd();
+		
+	}
+
+	@Then("^Pop-up heading should displayed as \"([^\"]*)\"$")
+	public void pop_up_heading_should_displayed_as(String arg1) throws Throwable 
+	{
+		lp.VerifyForgotpwdTitle();
+	}
+
+	@Then("^User enters registered emailid as \"([^\"]*)\"$")
+	public void user_enters_registered_emailid_as(String arg1) throws Throwable 
+	{
+	
+		lp.EnterEmail(arg1);
+	}
+
+	@When("^User clicks on reset password CTA$")
+	public void user_clicks_on_reset_password_CTA() throws Throwable 
+	{
+		lp.ClickReserPwd();
+	}
+
+	@Then("^User prompt with confirmation message$")
+	public void user_prompt_with_confirmation_message() throws Throwable 
+	{
+	  lp.Confirmation();
+	}
+
+	@When("^User clicks on Got it CTA$")
+	public void user_clicks_on_Got_it_CTA() throws Throwable 
+	{
+	
+	     lp.ClickGotItCTA();
+	
+	}
+
+	@Then("^User navigate back to homepage$")
+	public String user_navigate_back_to_homepage() throws Throwable 
+	{
+		String hompageTitle = driver.getTitle();
+		Assert.assertEquals("Inner Circle : Competentia - Experience the Difference", hompageTitle);
+		return hompageTitle;
+	}
+
+	@Then("^User enters invalid email-id as \"([^\"]*)\"$")
+	public void user_enters_invalid_email_id_as(String arg1) throws Throwable 
+	{
+	
+		lp.EnterEmail(arg1);
+	}
+
+	
+	@Then("^User prompt with Error message as \"([^\"]*)\"$")
+	public void user_prompt_with_Error_message_as(String arg1) throws Throwable 
+	{
+		lp.VerifyErrorMsg();
+	}
+
+	@When("^User clicks on Cancel CTA$")
+	public void user_clicks_on_Cancel_CTA() throws Throwable 
+	{
+	   lp.ClickCancel();
+	
+	}
+
+	
+	
 }

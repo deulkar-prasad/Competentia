@@ -44,11 +44,12 @@ public class LoginPage extends TestBase
 	@FindBy(xpath="(//*[contains(text (),'Log in')])[2]")
 	WebElement loginCTA;
 	
+	
+	//--------------- Page factory for forgot password flow ------------------------------------------------
+	
 	@FindBy(xpath="//*[contains(text (),'Forgot your password?')]")
 	WebElement ForgotPwd;
 	
-	
-	//--------------- Page factory for forgot password flow ------------------------------------------------
 	@FindBy(xpath="(//*[contains(text (),'Reset password')])[1]")
 	WebElement ResetPwdTitle;
 	
@@ -57,6 +58,10 @@ public class LoginPage extends TestBase
 	
 	@FindBy(xpath="(//button[@type='submit'])[2]")
 	WebElement ResetPwdCTA;
+	
+	
+	@FindBy(xpath="//*[contains(text(),\"This is not a valid e-mail address\")]")
+	WebElement Errormsg;
 	
 	@FindBy(xpath="(//*[contains(text (),'Cancel')])[1]")
 	WebElement CancelCTA;
@@ -87,25 +92,75 @@ public class LoginPage extends TestBase
 		String s=popupText.getText();
 		Assert.assertEquals("Log in",s);
 		return s;
-	
 	}
 	
 	public void login(String un, String pwd) 
 	{
 		username.sendKeys(un);
-		password.sendKeys(pwd);
-			
+		password.sendKeys(pwd);		
 	}
 	
 	public void ClickLoginpopup()
 	{
-		
 		loginCTA.click();
 	}
 	
 	
+	//-------------------------- Actions for forgot password ---------------------------
 	
 	
+	public void ClickonForgotpwd() 
+	{
+		ForgotPwd.click();	
+	}
+	
+	public String VerifyForgotpwdTitle()
+	
+	{
+		ResetPwdTitle.isDisplayed();
+		String PopupTitle = ResetPwdTitle.getText();
+		Assert.assertEquals("Reset password", PopupTitle);
+		return PopupTitle;
+	}
+	
+	public void EnterEmail(String email) 
+	
+	{		
+		ResetEmail.sendKeys(email);
+	}
+	
+	public void ClickReserPwd() 
+	{
+		ResetPwdCTA.click();
+		
+	}
+	
+	public String VerifyErrorMsg()
+	
+	{
+		String Errortext= Errormsg.getText();
+		Assert.assertEquals("This is not a valid e-mail address", Errortext);
+		return Errortext;	
+	}
+	
+	public String Confirmation()
+	{
+		String Msgtext=CheckYourInbox.getText();
+		Assert.assertEquals("Check your inbox", Msgtext);
+		return Msgtext;
+	}
+	
+	public void ClickGotItCTA()
+	
+	{
+		GotItCTA.click();		
+	}
+	
+	public void ClickCancel()
+	{
+		CancelCTA.click();
+		
+	}
 	
 	
 }

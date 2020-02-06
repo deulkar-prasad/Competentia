@@ -5,7 +5,6 @@ Background: Below are the common steps for each scenario
 Given User launch Chrome browser  
 Then User Clicks on Login CTA from homepage
 
-
 @Sanity
 Scenario: Login Test for Referrer User
 Then User enters Email id as "deulkar.prasad87@gmail.com" and password as "Password!21"
@@ -30,14 +29,16 @@ Then User enters registered emailid as "test.jan@mailcatch.com"
 When User clicks on reset password CTA
 Then User prompt with confirmation message
 When User clicks on Got it CTA
-Then User navigate back to homepage.
+Then User navigate back to homepage
+Then User close the browser
 
 @Regression
 Scenario: Validating Forgot password functionality for valid Email id
 Then User clicks on forgot password link
 Then Pop-up heading should displayed as "Reset password"
 Then User enters invalid email-id as "test@mailcatch.com"
-When Uesr clicks on reset password CTA
+When User clicks on reset password CTA
 Then User prompt with Error message as "This User was not found or invalid"
 When User clicks on Cancel CTA
-Then user navigate back to homepage.
+Then user navigate back to homepage
+Then User close the browser
