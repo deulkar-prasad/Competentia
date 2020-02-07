@@ -4,7 +4,7 @@ public class TestUtil
 {
 
 	
-	static int Page_Load_Time= 45;
-	static int Implicit_Wait=45;
+	static int Page_Load_Time= 60;
+	static int Implicit_Wait=60;
 	
 }

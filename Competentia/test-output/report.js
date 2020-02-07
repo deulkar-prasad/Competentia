@@ -1,9 +1,9 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("/SeleniumPrac/Competentia/src/test/java/Features/Login.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/java/Features/Login.feature");
 formatter.feature({
   "line": 1,
-  "name": "Check Competetia website login functionality for referre",
+  "name": "Check Competetia website login and forgot password functionality",
   "description": "",
-  "id": "check-competetia-website-login-functionality-for-referre",
+  "id": "check-competetia-website-login-and-forgot-password-functionality",
   "keyword": "Feature"
 });
 formatter.background({
@@ -27,211 +27,142 @@ formatter.match({
   "location": "Login.user_launch_Chrome_browser()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 9962042601,
+  "status": "passed"
 });
 formatter.match({
   "location": "Login.user_Clicks_on_Login_CTA_from_homepage()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 4148575555,
+  "status": "passed"
 });
 formatter.scenario({
-  "line": 10,
-  "name": "Login Test for Referrer User",
+  "line": 36,
+  "name": "Validating Forgot password functionality for valid Email id",
   "description": "",
-  "id": "check-competetia-website-login-functionality-for-referre;login-test-for-referrer-user",
+  "id": "check-competetia-website-login-and-forgot-password-functionality;validating-forgot-password-functionality-for-valid-email-id",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 9,
-      "name": "@Sanity"
+      "line": 35,
+      "name": "@smoke"
     }
   ]
 });
 formatter.step({
-  "line": 11,
-  "name": "User enters Email id as \"deulkar.prasad87@gmail.com\" and password as \"Password!21\"",
+  "line": 37,
+  "name": "User clicks on forgot password link",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 12,
-  "name": "User clicks on LoginCTA from pop-up",
+  "line": 38,
+  "name": "Pop-up heading should displayed as \"Reset password\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 13,
-  "name": "User navigates on Welcome page with page title as \"Inner Circle : Dashboard\"",
+  "line": 39,
+  "name": "User enters invalid email-id as \"test\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 14,
-  "name": "Referre dashboard should be displayed",
+  "line": 40,
+  "name": "User clicks on reset password CTA",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 41,
+  "name": "User prompt with Error message as \"This User was not found or invalid\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 15,
+  "line": 42,
+  "name": "User clicks on Cancel CTA",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 43,
+  "name": "User navigate back to homepage",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 44,
   "name": "User close the browser",
   "keyword": "Then "
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "deulkar.prasad87@gmail.com",
-      "offset": 25
-    },
-    {
-      "val": "Password!21",
-      "offset": 70
-    }
-  ],
-  "location": "Login.user_enters_Email_id_as_and_password_as(String,String)"
+  "location": "Login.user_clicks_on_forgot_password_link()"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "Login.user_clicks_on_LoginCTA_from_pop_up()"
-});
-formatter.result({
-  "status": "skipped"
+  "duration": 12788540533,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Inner Circle : Dashboard",
-      "offset": 51
+      "val": "Reset password",
+      "offset": 36
     }
   ],
-  "location": "Login.user_navigates_on_Welcome_page_with_page_title_as(String)"
+  "location": "Login.pop_up_heading_should_displayed_as(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 145428614,
+  "status": "passed"
 });
 formatter.match({
-  "location": "Login.user_should_view_the_referre_s_dashboard()"
+  "arguments": [
+    {
+      "val": "test",
+      "offset": 33
+    }
+  ],
+  "location": "Login.user_enters_invalid_email_id_as(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 152174990,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Login.user_clicks_on_reset_password_CTA()"
+});
+formatter.result({
+  "duration": 84844218,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "This User was not found or invalid",
+      "offset": 35
+    }
+  ],
+  "location": "Login.user_prompt_with_Error_message_as(String)"
+});
+formatter.result({
+  "duration": 45681949,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Login.user_clicks_on_Cancel_CTA()"
+});
+formatter.result({
+  "duration": 158396132,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Login.user_navigate_back_to_homepage()"
+});
+formatter.result({
+  "duration": 17512552,
+  "status": "passed"
 });
 formatter.match({
   "location": "Login.user_close_the_browser()"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.background({
-  "line": 3,
-  "name": "Below are the common steps for each scenario",
-  "description": "",
-  "type": "background",
-  "keyword": "Background"
-});
-formatter.step({
-  "line": 5,
-  "name": "User launch Chrome browser",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "User Clicks on Login CTA from homepage",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "Login.user_launch_Chrome_browser()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "Login.user_Clicks_on_Login_CTA_from_homepage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.scenario({
-  "line": 18,
-  "name": "Login Test for Normal User",
-  "description": "",
-  "id": "check-competetia-website-login-functionality-for-referre;login-test-for-normal-user",
-  "type": "scenario",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "line": 17,
-      "name": "@Regression"
-    }
-  ]
-});
-formatter.step({
-  "line": 19,
-  "name": "User enters Email id as \"test.jan@mailcatch.com\" and password as \"Password!21\"",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 20,
-  "name": "User clicks on LoginCTA from pop-up",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 21,
-  "name": "User navigates on Welcome page with page title as \"Inner Circle : Dashboard\"",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 22,
-  "name": "Normal dashboard should be displayed",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 23,
-  "name": "User close the browser",
-  "keyword": "Then "
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "test.jan@mailcatch.com",
-      "offset": 25
-    },
-    {
-      "val": "Password!21",
-      "offset": 66
-    }
-  ],
-  "location": "Login.user_enters_Email_id_as_and_password_as(String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "Login.user_clicks_on_LoginCTA_from_pop_up()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Inner Circle : Dashboard",
-      "offset": 51
-    }
-  ],
-  "location": "Login.user_navigates_on_Welcome_page_with_page_title_as(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "Login.normal_dashboard_should_be_displayed()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "Login.user_close_the_browser()"
-});
-formatter.result({
-  "status": "skipped"
+  "duration": 835218954,
+  "status": "passed"
 });
 });

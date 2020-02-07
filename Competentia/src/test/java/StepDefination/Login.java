@@ -82,6 +82,7 @@ public class Login extends TestBase
 	public void user_clicks_on_forgot_password_link() throws Throwable
 	{
 		lp.ClickonForgotpwd();
+		  Thread.sleep(10000);
 		
 	}
 
@@ -92,10 +93,10 @@ public class Login extends TestBase
 	}
 
 	@Then("^User enters registered emailid as \"([^\"]*)\"$")
-	public void user_enters_registered_emailid_as(String arg1) throws Throwable 
+	public void user_enters_registered_emailid_as(String email) throws Throwable 
 	{
 	
-		lp.EnterEmail(arg1);
+		lp.EnterEmail(email);
 	}
 
 	@When("^User clicks on reset password CTA$")
@@ -127,10 +128,10 @@ public class Login extends TestBase
 	}
 
 	@Then("^User enters invalid email-id as \"([^\"]*)\"$")
-	public void user_enters_invalid_email_id_as(String arg1) throws Throwable 
+	public void user_enters_invalid_email_id_as(String email) throws Throwable 
 	{
-	
-		lp.EnterEmail(arg1);
+		
+		lp.EnterEmail(email);
 	}
 
 	
