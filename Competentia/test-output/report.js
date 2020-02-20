@@ -27,142 +27,104 @@ formatter.match({
   "location": "Login.user_launch_Chrome_browser()"
 });
 formatter.result({
-  "duration": 9962042601,
+  "duration": 8715583401,
   "status": "passed"
 });
 formatter.match({
   "location": "Login.user_Clicks_on_Login_CTA_from_homepage()"
 });
 formatter.result({
-  "duration": 4148575555,
+  "duration": 3426491023,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 36,
-  "name": "Validating Forgot password functionality for valid Email id",
+  "line": 9,
+  "name": "Login Test for Referrer User",
   "description": "",
-  "id": "check-competetia-website-login-and-forgot-password-functionality;validating-forgot-password-functionality-for-valid-email-id",
+  "id": "check-competetia-website-login-and-forgot-password-functionality;login-test-for-referrer-user",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 35,
-      "name": "@smoke"
+      "line": 8,
+      "name": "@Sanity"
     }
   ]
 });
 formatter.step({
-  "line": 37,
-  "name": "User clicks on forgot password link",
+  "line": 10,
+  "name": "User enters Email id as \"deulkar.prasad87@gmail.com\" and password as \"Password!21\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 38,
-  "name": "Pop-up heading should displayed as \"Reset password\"",
+  "line": 11,
+  "name": "User clicks on LoginCTA from pop-up",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 39,
-  "name": "User enters invalid email-id as \"test\"",
+  "line": 12,
+  "name": "User navigates on Welcome page with page title as \"Inner Circle : Dashboard\"",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 40,
-  "name": "User clicks on reset password CTA",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 41,
-  "name": "User prompt with Error message as \"This User was not found or invalid\"",
+  "line": 13,
+  "name": "Referre dashboard should be displayed",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 42,
-  "name": "User clicks on Cancel CTA",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 43,
-  "name": "User navigate back to homepage",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 44,
+  "line": 14,
   "name": "User close the browser",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "Login.user_clicks_on_forgot_password_link()"
+  "arguments": [
+    {
+      "val": "deulkar.prasad87@gmail.com",
+      "offset": 25
+    },
+    {
+      "val": "Password!21",
+      "offset": 70
+    }
+  ],
+  "location": "Login.user_enters_Email_id_as_and_password_as(String,String)"
 });
 formatter.result({
-  "duration": 12788540533,
+  "duration": 1364144477,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Login.user_clicks_on_LoginCTA_from_pop_up()"
+});
+formatter.result({
+  "duration": 10468405692,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Reset password",
-      "offset": 36
+      "val": "Inner Circle : Dashboard",
+      "offset": 51
     }
   ],
-  "location": "Login.pop_up_heading_should_displayed_as(String)"
+  "location": "Login.user_navigates_on_Welcome_page_with_page_title_as(String)"
 });
 formatter.result({
-  "duration": 145428614,
+  "duration": 14691799,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "test",
-      "offset": 33
-    }
-  ],
-  "location": "Login.user_enters_invalid_email_id_as(String)"
+  "location": "Login.user_should_view_the_referre_s_dashboard()"
 });
 formatter.result({
-  "duration": 152174990,
-  "status": "passed"
-});
-formatter.match({
-  "location": "Login.user_clicks_on_reset_password_CTA()"
-});
-formatter.result({
-  "duration": 84844218,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "This User was not found or invalid",
-      "offset": 35
-    }
-  ],
-  "location": "Login.user_prompt_with_Error_message_as(String)"
-});
-formatter.result({
-  "duration": 45681949,
-  "status": "passed"
-});
-formatter.match({
-  "location": "Login.user_clicks_on_Cancel_CTA()"
-});
-formatter.result({
-  "duration": 158396132,
-  "status": "passed"
-});
-formatter.match({
-  "location": "Login.user_navigate_back_to_homepage()"
-});
-formatter.result({
-  "duration": 17512552,
+  "duration": 223461897,
   "status": "passed"
 });
 formatter.match({
   "location": "Login.user_close_the_browser()"
 });
 formatter.result({
-  "duration": 835218954,
+  "duration": 1022745224,
   "status": "passed"
 });
 });

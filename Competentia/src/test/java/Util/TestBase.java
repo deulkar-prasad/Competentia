@@ -5,14 +5,16 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import Listeners.ExtendReportLis;
 import Pages.LoginPage;
 import Pages.WelcomePage;
 
-public class TestBase 
+public class TestBase extends ExtendReportLis
 {
 
 	
@@ -24,10 +26,12 @@ public class TestBase
 	public LoginPage lp;
 	public TestBase tb;
 	public WelcomePage wp;
-		
+	public static Logger logger;
+	//public Properties configProp;
 	
 	public TestBase()
 	{
+			
 		try
 		{
 		 prop= new Properties();

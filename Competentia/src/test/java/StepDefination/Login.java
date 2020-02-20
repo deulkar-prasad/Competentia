@@ -2,61 +2,133 @@ package StepDefination;
 
 import java.util.concurrent.TimeUnit;
 
-
+import org.apache.log4j.PropertyConfigurator;
 import org.apache.logging.log4j.LogBuilder;
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.junit.Assert;
+import org.apache.log4j.Logger;
+
+import org.slf4j.LoggerFactory;
+import org.testng.Assert;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.GherkinKeyword;
+import com.aventstack.extentreports.gherkin.model.Feature;
+import com.aventstack.extentreports.gherkin.model.Scenario;
+
 import Pages.LoginPage;
 import Pages.WelcomePage;
 import Util.TestBase;
 import cucumber.api.java.en.*;
 
-
-public class Login extends TestBase
+public class Login extends TestBase 
 {
 	
 	
-	public static Logger log=LogManager.getLogger(TestBase.class.getName());
 	
 	@Given("^User launch Chrome browser$")
 	public void user_launch_Chrome_browser() throws Throwable 
 	{
-		log.info("Driver is initilized");		
+		
+		ExtentTest loginfo=null;
+		try {
+		test=extent.createTest(Feature.class,"Check Competetia website login and forgot password functionality");
+		test=test.createNode(Scenario.class, "Login Test for Referrer User");
+		loginfo=test.createNode(new GherkinKeyword("Given"), "User_launch_Chrome_browser");
+		
 		tb=new TestBase();
-		driver=tb.initializeDriver();
+		driver=TestBase.initializeDriver();
 		lp=new LoginPage(driver);
 		wp=new WelcomePage(driver);
-		log.info("Driver is initilized");
 		
-		/*System.setProperty("webdriver.chrome.driver", "D:\\SeleniumPrac\\Cucumber Parc\\chromedriver_win32\\chromedriver.exe");
-		driver= new ChromeDriver();
-		lp=new LoginPage(driver);*/
+		loginfo.pass("Opened Chrome browser and entered URL");
+		
+		// To add screenshot for each pass test cases.
+		loginfo.addScreenCaptureFromPath(CaptureScreenshot(driver));
+		
+		//Logger
+		logger=Logger.getLogger(Login.class); //Added logger
+		PropertyConfigurator.configure("Log4j.properties");//Added logger
+		logger.info("******** Launching browser  *********");
+		
+		}catch (AssertionError | Exception ee) {
+			// TODO: handle exception
+			TestStepHandel("FAIL", driver, loginfo, ee);
+		}
+		
 	}
 
 	@Then("^User Clicks on Login CTA from homepage$")
 	public void user_Clicks_on_Login_CTA_from_homepage() throws Throwable {
-	    log.info("Navigated to Home page");
-		lp.ClickLoginCTA();
+	    
+		ExtentTest loginfo=null;
+		try {
+		loginfo=test.createNode(new GherkinKeyword("Then"), "User Clicks on Login CTA from homepage");
+		lp.ClickLoginCTA();	
+		loginfo.pass("User Clicked on Login CTA from Home Page");
+		
+		}catch (AssertionError | Exception ee) {
+			// TODO: handle exception
+			TestStepHandel("FAIL", driver, loginfo, ee);
+		}
+		
+		logger.info("******** User Clicked on Login CTA from Home Page *********");
 	}
 
 	@Then("^User enters Email id as \"([^\"]*)\" and password as \"([^\"]*)\"$")
 	public void user_enters_Email_id_as_and_password_as(String un, String pwd) throws Throwable {
-	    lp.login(un, pwd);
+	   
+		ExtentTest loginfo=null;
+		try {
+		loginfo=test.createNode(new GherkinKeyword("Then"), "User Enters Valid Referrer Username and Password");
+		lp.login(un, pwd);
+		loginfo.pass("User Entered Referrer user credentials");
+		
+		}catch (AssertionError | Exception ee) {
+			// TODO: handle exception
+			TestStepHandel("FAIL", driver, loginfo, ee);
+		}
+		
+		logger.info("*** User Entered Referrer Username and password ****");
+		
 	}
 
 	@Then("^User clicks on LoginCTA from pop-up$")
 	public void user_clicks_on_LoginCTA_from_pop_up() throws Throwable {
-	    lp.ClickLoginpopup();
+		
+		ExtentTest loginfo=null;
+		try {
+		loginfo=test.createNode(new GherkinKeyword("Then"), "User clicks on LoginCTA from pop-up");
+		lp.ClickLoginpopup();
 	    Thread.sleep(10000);
-	}
+		loginfo.pass("User Cliked on Login CTA from Pop-up");
+		
+		}catch (AssertionError | Exception ee) {
+			// TODO: handle exception
+			TestStepHandel("FAIL", driver, loginfo, ee);
+		}
+		
+		logger.info("*** User clicked on LoginCTA from Login Pop-up ****");
+	 }
 	
 	@Then("^User navigates on Welcome page with page title as \"([^\"]*)\"$")
 	public void user_navigates_on_Welcome_page_with_page_title_as(String Welcomepagetitle) throws Throwable
 		{
 	   
-			String s1= driver.getTitle();
-			Assert.assertEquals(Welcomepagetitle, s1);
+			ExtentTest loginfo=null;
+			try
+			{
+				
+				loginfo=test.createNode(new GherkinKeyword("Then"),"User navigates on Welcome page");
+				String s1= driver.getTitle();
+				Assert.assertEquals(Welcomepagetitle, s1);
+				loginfo.pass("Page Title validated on Welcome page");
+				
+			}catch (AssertionError | Exception ee) {
+				// TODO: handle exception
+				TestStepHandel("FAIL", driver, loginfo, ee);
+			}
+		
+		
 		}
 	
 	@Then("^Referre dashboard should be displayed$")
