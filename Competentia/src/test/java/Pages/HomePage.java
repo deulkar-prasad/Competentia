@@ -1,14 +1,22 @@
 package Pages;
 
-import org.junit.Assert;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import Util.TestBase;
+import Util.WaitHelper;
 
 public class HomePage extends TestBase
 {
+	public WebDriver Homedriver;
+	WaitHelper waithelper;
+	
+	
+	
 	//Page factory for HOMEPAGE
 	@FindBy(xpath="//div[@class=\"ReferralText\"]")
 	WebElement ReferalText;
@@ -94,26 +102,32 @@ public class HomePage extends TestBase
 	WebElement AlreadyHaveACC;
 	
 	
-	// Initializing the page objects for HOMEPAGE
-	public HomePage()
-	{
-		PageFactory.initElements(driver, this);	
-	}
-	
-	// Validations on HOMEPAGE
+	// --------------- Initializing the page object -----------------------------------------------
+		public  HomePage(WebDriver hpdriver) 
+			{
+				Homedriver=hpdriver;
+				PageFactory.initElements(hpdriver, this);
+				waithelper=new WaitHelper(Homedriver);
+			}
+		
+// Validations on HOMEPAGE
 	
 	public String verifyPagetitle()
 	{
 		return driver.getTitle();
 	}
 	
-	public void verifyBlueribbonText()
+	public void verifyBlueribbonText() throws InterruptedException
 	{
+		Thread.sleep(10000);
 		String a=ReferalText.getText();
-		Assert.assertEquals("Have you received a referrer invitation?", a);
+		Assert.assertEquals("Have you received a referrer invitation? Sign up here", a);
 		
-		String b=SingUptext1.getText();
-		Assert.assertEquals("Sign up here", b);
+		System.out.println("Referral Test is --> " + a);
+		
+		
+		/*String b=SingUptext1.getText();
+		Assert.assertEquals("Sign up here", b);*/
 	}
 	
 	public boolean VerifySiteLogo()

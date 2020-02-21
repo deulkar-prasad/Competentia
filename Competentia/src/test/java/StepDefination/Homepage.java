@@ -1,5 +1,13 @@
 package StepDefination;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.GherkinKeyword;
+import com.aventstack.extentreports.gherkin.model.Feature;
+import com.aventstack.extentreports.gherkin.model.Scenario;
+
 import Pages.HomePage;
 import Util.TestBase;
 import cucumber.api.java.en.Given;
@@ -7,16 +15,54 @@ import cucumber.api.java.en.Then;
 
 public class Homepage extends TestBase
 {
-	HomePage home=new HomePage();
 		
 	@Given("^User navigate on Homepage$")
 	public void user_is_on_homepage() throws Throwable 
 	{
-	    TestBase.initializeDriver();
+		ExtentTest loginfo=null;
+		try {
+		test=extent.createTest(Feature.class,"Check Competetia website HOMEPAGE");
+		test=test.createNode(Scenario.class, "Validate the Homepage Global Hearder Component of Inner-Circle site");
+		loginfo=test.createNode(new GherkinKeyword("Given"), "User navigate on Homepage");
+		
+		tb=new TestBase();
+		driver=TestBase.initializeDriver();
+	    hp=new HomePage(driver);
+
+	    loginfo.pass(" Home page is visible");
+	    
+		// To add screenshot for each pass test cases.
+		loginfo.addScreenCaptureFromPath(CaptureScreenshot(driver));
+		
+		//Logger
+		logger=Logger.getLogger(Homepage.class); //Added logger
+		PropertyConfigurator.configure("Log4j.properties");//Added logger
+		logger.info("******** Home Page is visible *********");
+		
+		}catch (AssertionError | Exception ee) {
+			// TODO: handle exception
+			TestStepHandel("FAIL", driver, loginfo, ee);
+		}
 	    
 	}
 	
-	@Then("^Verify teh Blue Ribbon$")
+	
+	@Given("^Verifies the Global Header section on Homepage$")
+	public void verifies_the_Global_Header_section_on_Homepage() throws InterruptedException
+	{
+	  hp.verifyBlueribbonText();
+	  System.out.println("Homepage Text is validated ");
+	  
+	}
+	
+	@Then("^User closed the browser$")
+	public void user_closed_the_browser(){
+	 
+		driver.quit();
+		
+	}
+	
+	/*@Then("^Verify the Blue Ribbon$")
 	public void verify_teh_Blue_Ribbon() throws Throwable 
 	{
 		home.verifyBlueribbonText();
@@ -56,7 +102,7 @@ public class Homepage extends TestBase
 	public void verify_the_Sign_up_funactionality_from_homepage_footer() throws Throwable 
 	{
 	    
-	}
+	}*/
 	
 	
 }

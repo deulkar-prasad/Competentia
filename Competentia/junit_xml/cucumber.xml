@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="25.235524">
-<testcase classname="Check Competetia website login and forgot password functionality" name="Login Test for Referrer User" time="25.235524">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="48.678669">
+<testcase classname="Check Competetia website HOMEPAGE" name="Validate the Homepage Global Hearder Component of Inner-Circle site" time="21.669691">
+<system-out><![CDATA[Given User navigate on Homepage.............................................passed
+And Verifies the Global Header section on Homepage..........................passed
+Then User closed the browser................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Check Competetia website login and forgot password functionality" name="Login Test for Referrer User" time="27.008978">
 <system-out><![CDATA[Given User launch Chrome browser............................................passed
 Then User Clicks on Login CTA from homepage.................................passed
 Then User enters Email id as "deulkar.prasad87@gmail.com" and password as "Password!21".passed

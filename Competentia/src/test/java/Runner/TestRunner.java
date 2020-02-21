@@ -13,7 +13,7 @@ import cucumber.api.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-features= {"src/test/java/Features/Login.feature"}, // the path of feature files
+features= {"src/test/java/Features/"}, // the path of feature files
 //features= {"\\SeleniumPrac\\Competentia\\src\\test\\java\\Features\\Login.feature"}, // the path of feature files
 glue= {"StepDefination"}, // Path of the step definition files  
 plugin= {"pretty","html:test-output", "junit:junit_xml/cucumber.xml"}, // to generate different type of reports

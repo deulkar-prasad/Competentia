@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import Listeners.ExtendReportLis;
+import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.WelcomePage;
 
@@ -26,6 +27,7 @@ public class TestBase extends ExtendReportLis
 	public LoginPage lp;
 	public TestBase tb;
 	public WelcomePage wp;
+	public HomePage hp;
 	public static Logger logger;
 	//public Properties configProp;
 	
